@@ -15,7 +15,7 @@ bool solution(std::string const &str, std::string const &ending) {
     {
     return false;
   }else
-    { // 
+    { 
    string strCompare = str.substr(abs(strSize - endingSize ),endingSize);
     return (strCompare == ending);
   }
