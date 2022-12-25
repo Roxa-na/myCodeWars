@@ -4,7 +4,7 @@
 // "Robin Singh" ==> ["Robin", "Singh"]
 
 // "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
-
+//my solution
 #include <vector>
 #include <string>
 #include <cstddef> 
@@ -21,4 +21,19 @@ std::vector<std::string> string_to_array(const std::string& s) {
     }
   result.push_back(s.substr(pos,found - pos));
   return result; // your code here
+}
+//better solution
+#include <vector>
+#include <string>
+using namespace std;
+
+vector<string> string_to_array(const string& s) {
+  vector<string> res;
+  stringstream ss(s + " ");
+  string word;
+//istream& getline(istream& is, 
+ //          string& str, char delim);
+ 
+  while (getline(ss, word, ' ')) res.push_back(word);
+  return res;
 }
