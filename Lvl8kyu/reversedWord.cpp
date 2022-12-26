@@ -5,7 +5,7 @@
 // "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
 
 // Strings
-
+//my sol
 #include <algorithm>
  #include <vector>
 #include <string>
@@ -33,5 +33,33 @@ std::string reverse_words(const std::string& str) {
   temp.pop_back();
   return temp;
   
+}
+// other solutions
+//sol1
+#include <string>
+
+std::string reverse_words(const std::string& str) {
+    std::string res = "";
+    std::string buffer = "";
+    for(int i = 0; i< str.length(); i++)
+    {
+        if(str[i]==' ') {res = buffer +" "+ res; buffer = ""; }
+        else buffer+= str[i];
+    }
+    res = buffer +" "+ res; 
+    res.pop_back();
+    return res;
+}
+//sol2
+#include <string>
+#include <iostream>
+
+std::string reverse_words(const std::string& str) {
+  std::string s;
+  std::stringstream ss(str);
+  std::string w;
+  while (ss >> w) s = w + " " + s;
+  s.pop_back();
+  return s;
 }
 
