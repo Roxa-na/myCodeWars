@@ -18,3 +18,15 @@ std::vector<int> digitize(unsigned long n)
   for (auto& a : sNumber) result.push_back(a - 48);
   return result;
 }
+// another sol
+std::vector<int> digitize(unsigned long n) 
+{     
+    std::vector<int> digits;
+   
+    do {
+        digits.push_back (n % 10);
+        n /= 10;
+    } while (n > 0);
+   
+    return digits;
+}
