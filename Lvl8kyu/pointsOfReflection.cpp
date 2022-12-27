@@ -10,15 +10,10 @@
 // my sol
 #include <utility>
 
+#include <utility>
 std::pair<int, int> symmetricPoint(const std::pair<int, int>& p,
                                    const std::pair<int, int>& q) {
-  int first = 0;
-  int second = 0;
-  if ((q.first < 0 && p.first >0) or (p.first < 0 && q.first > 0)) first = 2 *q.first - p.first;
-  else  first = 2 *q.first - p.first;
-  if ((q.second < 0 && p.second >0) or (p.second < 0 && q.second > 0)) second = 2 *q.second - p.second;
-  else second = 2 *q.second -p.second;
-    return {first,second};
+    return {2 *q.first - p.first, 2 *q.second -p.second};
 }
 
 
