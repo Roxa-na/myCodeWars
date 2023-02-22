@@ -14,9 +14,9 @@ std::string reverse_words(std::string str)
     {
     if (str[i] == ' ')
       {
-      reverse(str.begin() + pos,str.begin() + i);
+      reverse(pos,i);
       pos = i+1;
-    } else if (i == str.size() -1) reverse(str.begin() + pos,str.begin() + i+1);
+    } else if (i == str.size() -1) reverse(pos,i+1);
   }
   return str;
 }
