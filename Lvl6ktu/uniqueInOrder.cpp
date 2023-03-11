@@ -44,3 +44,26 @@ std::vector<char> uniqueInOrder(const std::string& iterable){
   if (iterable.length() == 0) result.clear();
   return result;
 }
+
+//better sol
+
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <unordered_set>
+
+using namespace std;
+template <typename T> std::vector<T> uniqueInOrder(const std::vector<T>& iterable){
+    vector<T> res;
+
+    unique_copy (iterable.begin(), iterable.end(), std :: back_inserter(res));
+    return res;
+}
+std::vector<char> uniqueInOrder(const std::string& iterable){
+    vector<char> res;
+
+    unique_copy (iterable.begin(), iterable.end(), std :: back_inserter(res));
+    return res;
+}
