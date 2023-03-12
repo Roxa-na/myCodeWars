@@ -13,12 +13,13 @@
 using namespace std;
 bool amIWilson(unsigned n) {
   // Check if a number is a Wilson prime
-  if (n == 0 or n ==1 or n == 2) return false;
+  // first check if it is a prime number
   for (unsigned int i = 2; i <= n / 2; i++) {
         if (n % i == 0) {
             return false;
         }
     }
+// primes p, p such that ( p − 1 ) ! ≡ − 1   ( mod ⁡ p ^2 ) 
   int res = 1;
   for (unsigned int i = 2; i < n; i++)
     {
@@ -26,4 +27,8 @@ bool amIWilson(unsigned n) {
   }
 
   return res == (n*n)-1;
+}
+// however, since the only numbers known to be wilson prime below E13 are 5,13,563 then 
+bool amIWilson(unsigned n) {
+    return n == 5 or n == 13 or n == 563;
 }
