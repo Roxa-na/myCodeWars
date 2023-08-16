@@ -6,3 +6,18 @@
 //modify the given string, otherwise this will break the test cases.
 
 //my sol
+    
+
+// another sol
+#include <string>
+#include <regex>
+using namespace std;
+std::string covfefe(std::string s){
+    regex pattern("coverage");
+  if (!regex_search(s,pattern)) return s + " covfefe";
+  else{
+    
+     return regex_replace(s, pattern, "covfefe");
+    
+  }
+}
