@@ -40,3 +40,20 @@ std::string RGBToHex::rgb(int r, int g, int b)
       << std::setw(2) << (b < 0 ? 0 : b > 255 ? 255 : b);
   return oss.str();
 }
+
+//
+#include <algorithm>
+#include <cstdio>
+
+namespace RGBToHex
+{
+    std::string rgb(int r, int g, int b)
+    {
+        char result[7];
+        std::sprintf(result, "%02X%02X%02X",
+            std::clamp(r, 0, 255),
+            std::clamp(g, 0, 255),
+            std::clamp(b, 0, 255));
+        return result;
+    }
+}
